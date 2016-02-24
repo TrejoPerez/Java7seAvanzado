@@ -13,10 +13,26 @@ import java.util.List;
  * @author root
  */
 public class PaisDAOImpl {
-    private List paises=null;
+    /*El patron Singleton dice:
+        Se necesita un metodo que retorne una unica instancia de esa clase
+    */
+    public static PaisDAOImpl instancia =null;
+    //Se le tiene que pasar el constructor como privado para que no se perminta nuesvas intancias
+    private PaisDAOImpl(){
+        
+    }
+    public static PaisDAOImpl getInstance(){
+        if(instancia == null){
+            instancia = new PaisDAOImpl();
+        }
+        return instancia;
+    }
+    private static List paises=null;
     //Aqui se supone que se tiene una lista de BD de paises
     public List getPaises(){
-        //Aqui se aplica el patrong singleton
+        /*Aqui se aplica el patrong singleton
+            Si la lista de paises ujnca se a instanciado, se instancia y se llena
+        */
         if(paises==null){
             paises = new ArrayList();
             Pais p1 = new Pais("Peru");
