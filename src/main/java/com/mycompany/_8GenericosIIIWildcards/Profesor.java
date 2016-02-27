@@ -9,20 +9,11 @@ package com.mycompany._8GenericosIIIWildcards;
  *
  * @author root
  */
-public class Profesor {
-    private String nombre;
-
+public class Profesor extends Persona{
+  
     public Profesor(String nombre) {
-        this.nombre = nombre;
+        super(nombre);
     }
-    
-    
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+  
     
 }
